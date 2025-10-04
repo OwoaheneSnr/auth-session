@@ -1,14 +1,15 @@
 import 'dotenv/config';
 import { z } from 'zod';
-const passwordRegex =
-  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,50}$/;
+const RegexKey = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,50}$/;
 
 const envsSchema = z.object({
+  // ? Server
   PORT_SERVER: z.coerce.number().int().nonnegative(),
-
+  SECRET_JWT: z.string().regex(RegexKey),
+  REFRES_JWT: z.string().regex(RegexKey),
   // ? DB
   USERNAME_DB: z.string().nonempty({ message: 'DB_USER is required' }),
-  PASSWORD_DB: z.string().regex(passwordRegex),
+  PASSWORD_DB: z.string().regex(RegexKey),
   NAME_DB: z.string().nonempty({ message: 'DB_NAME is required' }),
   PORT_DB: z.coerce
     .number()
