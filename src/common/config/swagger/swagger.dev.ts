@@ -28,6 +28,6 @@ export function setupSwagger(app: INestApplication, prefix: string = '') {
       res.send(document);
     });
 
-    logger.log(`Swagger URL: http://localhost:${envs.PORT_SERVER}/${prefix}`);
+    logger.log(`Swagger URL: http://localhost:${envs.PORT_SERVER}/swagger`);
   }
 }
