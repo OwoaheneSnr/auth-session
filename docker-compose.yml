@@ -1,7 +1,6 @@
 services:
-  db:
-    image: postgres:18-alpine
-    container_name: postgres_db
+  auth_db:
+    image: docker.io/library/postgres:16
     restart: always
     env_file:
       - .env
@@ -10,8 +9,6 @@ services:
       POSTGRES_PASSWORD: ${PASSWORD_DB}
       POSTGRES_DB: ${NAME_DB}
     ports:
-      - "${DB_PORT:-5432}:5432"
+      - "${PORT_DB:-5432}:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data #
-volumes:
-  postgres_data:
+      - ./db/data:/var/lib/postgresql/data

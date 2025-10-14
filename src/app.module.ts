@@ -1,15 +1,27 @@
 import { Module } from '@nestjs/common';
-import { PrismaModule } from '@config/database/prisma.module';
-import { PasswordModule } from '@/common/resources/password/password.module';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { UsersModule } from './users/users.module';
-import { AuthModule } from './auth/auth.module';
-import { APP_FILTER } from '@nestjs/core';
+import { ThrottlerModule } from '@nestjs/throttler';
+import { PrismaModule } from '#config/prisma/prisma.module';
+import { PasswordModule } from '#resources/password/password.module';
+import { AuthModule } from '#modules/auth/auth.module';
+import { THROTTLER_OPTIONS } from '#config/throttlers.config';
+import { CookiesModule } from '#resources/cookies/cookies.module';
+import { JwtCustomModule } from '#resources/jwt/jwt-custom.module';
+import { UsersModule } from '#modules/users/users.module';
+import { SeedModule } from './modules/seed/seed.module';
 
 @Module({
-  imports: [PrismaModule, UsersModule, AuthModule, PasswordModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    // * Global Modules
+    ThrottlerModule.forRoot(THROTTLER_OPTIONS),
+    PrismaModule,
+    CookiesModule,
+    JwtCustomModule,
+    PasswordModule,
+
+    // * Modules of my App
+    SeedModule,
+    UsersModule,
+    AuthModule,
+  ],
 })
 export class AppModule {}

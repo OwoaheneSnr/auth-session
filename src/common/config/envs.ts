@@ -6,7 +6,10 @@ const envsSchema = z.object({
   // ? Server
   PORT_SERVER: z.coerce.number().int().nonnegative(),
   SECRET_JWT: z.string().regex(RegexKey),
-  REFRES_JWT: z.string().regex(RegexKey),
+  REFRESH_JWT: z.string().regex(RegexKey),
+  NODE_ENV: z
+    .enum(['development', 'production', 'test'])
+    .default('development'),
   // ? DB
   USERNAME_DB: z.string().nonempty({ message: 'DB_USER is required' }),
   PASSWORD_DB: z.string().regex(RegexKey),
@@ -20,6 +23,10 @@ const envsSchema = z.object({
     .nonempty({ message: 'DB_HOST is required' })
     .default('localhost'),
   DATABASE_URL: z.string().nonempty({ message: 'URL is required' }),
+  // ? Admin
+  NAME_ADMIN: z.string().min(6),
+  PASSWORD_ADMIN: z.string().regex(RegexKey),
+  EMAIL_ADMIN: z.email(),
 });
 
 const result = envsSchema.safeParse(process.env);

@@ -14,8 +14,11 @@
     "sourceMap": true,
     "outDir": "./dist",
     "paths": {
-      "@resources/*": ["./src/common/resources/*"],
-      "@config/*": ["./src/common/config/*"],
+      "#config/*": ["./src/common/config/*"],
+      "#dto/*": ["./src/common/dto/*"],
+      "#modules/*": ["./src/modules/*"],
+      "#resources/*": ["./src/common/resources/*"],
+      "#common/*": ["./src/common/*"],
       "@/*": ["./src/*"]
     },
     "incremental": true,
